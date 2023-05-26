@@ -1,0 +1,414 @@
+/* color:#2e3c45; */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body {}
+body #donation {
+    position: fixed;
+    right: 50px; bottom: 50px;
+    z-index:999;
+    width:200px; 
+}
+body #donation img {
+    width:100%;
+}
+header {
+    width:100%;
+    position:fixed; z-index:999;
+    background: rgba(255, 252, 251, 0.75);
+    margin:0 auto;
+}
+header h1 {
+    padding:20px;
+    text-align: center;
+}
+header h1 img {
+    width:180px;
+}
+/* ----campaign1---- */
+.campaign1 {
+    background:rgb(239, 237, 237);
+    margin:0 auto;
+}
+.campaign1 .container {
+    width:100%; 
+    position:relative;
+}
+.campaign1 .container video {
+    position:relative;
+    width:100%;
+}
+.campaign1 .container .text {
+    position:absolute;
+    top:10%; width:100%;
+}
+.campaign1 .container .text p {
+    line-height:1.8;
+    width:1220px;
+    margin:0 auto;
+    color:rgb(213, 213, 213);
+    font-weight:600;
+    text-align: left;
+}
+.campaign1 .container .text p:nth-child(1) {   
+    font-family: 'Cinzel', serif; 
+    padding-top:200px;
+    font-size:3.5rem;
+}
+.campaign1 .container .text p:nth-child(2) {
+    line-height: 2;
+}
+.campaign1 .container .text em {
+    letter-spacing: 0.01em;
+    /* font-family: 'Gowun Batang', serif; */
+    font-size: 1.2rem;
+    font-weight:200;
+    color:rgb(213, 213, 213);
+}
+/* ---------campaign2-------- */
+.campaign2 {
+    padding-top:50px;
+    background: rgb(239, 237, 237);
+    text-align:center;
+    width:100%;
+    margin:0 auto;
+}
+.campaign2 .container {}
+.campaign2 .container h1 {
+    /* letter-spacing: 0.05em; */
+        font-family: 'Cinzel', serif;
+    /* color:rgb(236, 236, 236); */
+    font-weight:500;
+    font-size: 2.3rem;
+    padding:20px;
+}
+.campaign2 .container iframe {
+    padding:30px 0 100px;}
+/* --------best-------- */
+h2 {
+    letter-spacing: 0.1em;
+    font-family: 'Cinzel', serif;
+    /* font-weight: 600; */
+    padding:80px 0 30px;
+    font-size:2rem;
+    text-align:center;
+}
+.slide {
+    width:1220px;
+    margin:0 auto;
+    /* layout */
+    display: flex;
+    flex-wrap: nowrap;
+    /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+    overflow: hidden;
+  
+    /* position */
+    /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+    position: relative;
+  
+    /* size */
+    width: 40%;
+  
+    /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+    user-select: none;
+  }
+  .slide_item {
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+    position: relative;
+    left: 0px;
+  
+    /* size */
+    width: 100%;
+    height: 500px;
+    /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+    flex-shrink: 0;
+  
+    /* transition */
+    transition: left 0.15s;
+  }
+  .slide_item img {width:600px; height:500px; border-radius: 20px;}
+  .slide_button {
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* position */
+    position: absolute;
+    /* 버튼이 중앙에 위치하게 하기위해 계산 */
+    top: calc(50% - 16px);
+  
+    /* size */
+    width: 32px;
+    height: 32px;
+  
+    /* style */
+    border-radius: 100%;
+    /* background-color: #cccc; */
+    cursor: pointer;
+  }
+  
+  .slide_prev_button {
+    left: 10px;
+  }
+  .slide_next_button {
+    right: 10px;
+  }
+  
+  /* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+  .slide_item.item1 {
+
+}
+.slide_item.item2 {
+
+}
+.slide_item.item3 {
+
+}
+.slide_item.item4 {
+
+}
+.slide_item.item5 {
+
+}
+
+  /* 페이지네이션 스타일 */
+ul,
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.slide_pagination {
+    /* layout */
+    display: flex;
+    gap: 5px;
+
+    /* position */
+    position: absolute;
+    bottom: 0;
+    /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slide_pagination > li {
+    /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+    color: #c1c1c188;
+    cursor: pointer;
+    font-size: 25px;
+}
+.slide_pagination > li.active {
+    /* 현재 슬라이드 색상은 투명도 없이 */
+    color: rgb(152, 113, 86);
+}
+
+.slide_item_duplicate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    transition: left 0.15s;
+}
+/* -------campaign3-------- */
+.campaign3 {
+    margin:150px 0 80px;
+}
+.campaign3 .container {
+    display:flex;
+    flex-flow:row-nowrap;
+    justify-content: space-between;
+    width:1220px;
+    margin:0 auto;
+}
+.campaign3 .container .img {
+    height:500px;
+    width:50%;
+    background: url(../images/nord.png);
+    background-size: cover;
+}
+.campaign3 .container .img:hover {
+    transition:all 0.2s;
+    height:500px;
+    width:50%;
+    background: url(../images/nord_1.png);
+    background-size: cover;
+}
+.campaign3 .container2 .img {
+    height:500px;
+    width:50%;
+    background: url(../images/nord_model.png);
+    background-size: cover;
+    background-position-x:95%;
+}
+.campaign3 .container2 .img:hover {
+    transition:all 0.2s;
+    height:500px;
+    width:50%;
+    background: url(../images/nord_2.png);
+    background-size: cover;
+    background-position-x:95%;
+}
+.campaign3 .container .text {
+    padding:20px 0;
+    width:570px;
+}
+.campaign3 .container .text h1 {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size:1.5rem;
+    padding-bottom:20px;
+}
+.campaign3 .container .text p {
+    font-family: 'Gowun Dodum', sans-serif;
+    line-height:1.6;
+    padding-bottom:50px;
+
+}
+.campaign3 .button {    font-family: 'Gowun Dodum', sans-serif;}
+.campaign3 .container .text .button {
+    font-family: 'Lobster', cursive;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.campaign3 .text .button {
+    transition: all 0.5s;
+    text-align:center;
+    background:rgba(216, 185, 165, 0.97);
+    padding:20px;
+}
+.campaign3 .text .button:hover {
+    text-align:center;
+    color:#fff;
+    background:rgba(182, 154, 136, 0.97);
+}
+.campaign3 .container2 {
+    display:flex;
+    flex-flow:row-nowrap;
+    justify-content: space-between;
+    width:1220px;
+    margin:0 auto;
+}
+.campaign3 .container2 .text {
+    padding:40px;
+    width:500px;
+}
+.campaign3 .container2 .text h1 {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size:1.5rem;
+    padding-bottom:20px;
+}
+.campaign3 .container2 .text p {
+    font-family: 'Gowun Dodum', sans-serif;
+    line-height:1.6;
+    padding-bottom:50px;
+}
+.campaign3 .container2 .text .button {
+    font-family: 'Lobster', cursive;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.campaign3 .text .button {border-radius:10px;}
+/* ---------campaign4--------- */
+.campaign4 {
+    position:relative;
+    height:50%;
+    width:100%;
+    background: url(../images/bg1.jpg);
+    background-size: cover;
+}
+.campaign4::before {
+    background-color: rgba(255, 255, 255, 0.25);
+    content:''; display:inline-block; width:100%; height:100%;
+    position: absolute;
+}
+.campaign4 .container {
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-around;
+    color:#fff;
+    padding-top:80px;
+    margin:0 auto;
+    width:1220px;
+}
+.campaign4 .container h1 {
+    font-size:2rem;
+    padding-bottom:40px;
+}
+.campaign4 .container p {
+    font-family: 'Gowun Dodum', sans-serif;
+    line-height:1.4;
+    width:500px; 
+    font-size:1.2rem;
+}
+.campaign4 .container .contents {
+    position:relative;
+    height:570px;
+}
+.campaign4 .container p:nth-child(1) {}
+.campaign4 .container p:nth-child(2) {}
+.campaign4 .container p:nth-child(3) {}
+/* ----campaign4 contents2------- */
+.campaign4 .container2 {
+    text-align: center;
+    padding-bottom:100px;
+    width:1220px;
+    margin:0 auto;
+}
+.campaign4 .container2 .contents2 {  
+    color:#fff;  
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-between;
+}
+/* ---cam4, contain2 모음--- */
+.campaign4 .container2 .contents2 img {}
+.campaign4 .container2 .contents2 h2 {
+    font-size:2rem; 
+    font-family: 'Gowun Dodum', sans-serif;
+}
+.campaign4 .container2 .contents2 p {
+    font-family: 'Gowun Dodum', sans-serif;
+}
+/* ------------------------------------- */
+/* --------------footer-------------- */
+footer {
+    background:rgb(182, 182, 182);
+}
+footer .container {
+    color: #fff;
+    width:1220px;
+    margin:0 auto;
+}
+footer .container address {
+    text-align:center;
+    padding:40px 0 100px;
+}
+footer .container h2 {
+    padding-bottom:20px;
+    font-size:1.5rem;
+    text-align:center;
+}
+footer .container .brand {
+    padding-bottom:100px;
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-around;
+}
+footer .container .brand a  {
+    display:inline-block;
+    width:30%; 
+    height:50px;
+}
+footer .container .brand img {width:300px; text-align:center;}
+footer .container .brand .img1  {background:url(../images/brand1.png) no-repeat;    background-size: 70%;}
+footer .container .brand .img1:hover {background:url(../images/brand2_hov.png)no-repeat;    background-size: 70%;}
+footer .container .brand .img2  {background:url(../images/brand2.png)no-repeat;    background-size: 70%;}
+footer .container .brand .img2:hover {background:url(../images/brand1_hov.png)no-repeat;    background-size: 70%;}
+footer .container .brand .img3  {background:url(../images/brand3.png)no-repeat;    background-size: 100%;}
+footer .container .brand .img3:hover {background-size: cover;}
